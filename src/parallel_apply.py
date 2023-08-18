@@ -29,3 +29,5 @@ def run_on_subset(func, data_subset, output, index):
 
 def parallelize_on_rows(data, func, n_jobs=8):
     return parallelize(data, partial(run_on_subset, func), n_jobs=n_jobs)
+
+# Usage: Instead of dataFrame.apply(my_func, axis = 1) use parallelize_on_rows(dataFrame, my_func, 8)
